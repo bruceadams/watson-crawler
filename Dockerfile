@@ -12,7 +12,8 @@ RUN mkdir -p /opt/ibm && \
     mv watson-crawler-zip crawler.zip && \
     unzip crawler.zip && \
     rm crawler.zip && \
-    ln -s /opt/ibm/crawler*/bin/* /usr/local/bin
+    ln -s crawler-* crawler && \
+    ln -s /opt/ibm/crawler/bin/* /usr/local/bin
 
 # Setup so we can be run with any UID.
 RUN adduser -D crawler
